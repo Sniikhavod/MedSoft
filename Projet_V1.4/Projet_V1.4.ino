@@ -666,9 +666,9 @@ void Reglage(){
       }
       if(p.x >00 && p.x <240 && p.y>300){ 
          Serial.println("Sortie des reglages");//debug lors des test des zones de boutons
-         EEPROM.write(1, local); //.Write pour ecrire des bit
-         EEPROM.write(2, mortalite); //.Update pour ecrire des bit seulement si c'est une nouvelle valeur, afin de ne pas ecrire un 1 si la valeur 
-         EEPROM.write(3, stock);                                                                 //actuelle est deja un 1, afin d'economiser l'EEPROM
+         EEPROM.update(1, local); //.Write pour ecrire des bit
+         EEPROM.update(2, mortalite); //.Update pour ecrire des bit seulement si c'est une nouvelle valeur, afin de ne pas ecrire un 1 si la valeur 
+         EEPROM.update(3, stock);                                                                 //actuelle est deja un 1, afin d'economiser l'EEPROM
          flag = false;
       } 
     }//Fin du test de pression
